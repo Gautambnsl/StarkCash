@@ -1,0 +1,98 @@
+.nav {
+	width: min(90%, 70em);
+	margin-inline: auto;
+
+	h1 {
+		cursor: pointer;
+	}
+}
+
+.main {
+	margin-block: 3em;
+	width: min(90%, 70em);
+	margin-inline: auto;
+
+	.form {
+		width: min(100%, 35rem);
+		background-color: rgba(255, 255, 255, 0.185);
+		backdrop-filter: blur(0.5em);
+		padding: 1em;
+		border-radius: 0.6em;
+		display: grid;
+		gap: 1em;
+
+		&-head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			h2 {
+				cursor: pointer;
+				margin: 0;
+				text-decoration: underline transparent;
+				font-size: 1.2rem;
+
+				transition: color 300ms, text-decoration-color 300ms;
+
+				&:hover {
+					text-decoration-color: white;
+				}
+				&.active {
+					color: #f55050;
+					text-decoration-color: #f55050;
+					font-size: 1.8rem;
+				}
+			}
+		}
+
+		&-main {
+			display: grid;
+			gap: 1em;
+
+			.input {
+				label {
+					font-weight: 600;
+					font-size: 1.1rem;
+				}
+
+				p {
+					color: red;
+					margin: 0.2em 0 0;
+					font-size: 0.9rem;
+					padding-inline: 0.3em;
+				}
+			}
+
+			button {
+				background-color: #f55050;
+				border: none;
+				cursor: pointer;
+				color: white;
+				font-weight: 500;
+				padding-block: 0.6em;
+				border-radius: 0.5em;
+
+				transition: background-color 300ms;
+
+				&:hover {
+					background-color: darken($color: #f55050, $amount: 3);
+				}
+
+				&:active {
+					background-color: lighten(#f55050, 3);
+				}
+			}
+		}
+	}
+}
+
+input {
+	width: 100%;
+	margin-top: 0.2em;
+	border-radius: 0.5em;
+	border: none;
+	padding-block: 0.3em;
+	padding-inline: 0.4em;
+	font-weight: 500;
+	font-size: 1.1rem;
+}

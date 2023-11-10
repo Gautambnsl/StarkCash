@@ -1,0 +1,12 @@
+@use "./abstracts" as ab;
+@use "./components";
+
+body {
+	font-family: "Poppins", sans-serif;
+	background: url("../assets/blob-scene-haikei.svg") no-repeat center center
+		fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	color: white;
+}
