@@ -18,6 +18,7 @@ export default function Form() {
 	console.log(provider, "provider");
 	console.log(address, "address");
 	console.log(connection, "connection");
+
 	
 	const handleFormChange = async (val: number) => {
 		setForm(val);
@@ -51,9 +52,26 @@ export default function Form() {
 		connectToStarknet();
 	}, []);
 
+
+	const mainStyle = {
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+		height: '100vh',
+	  };
+	
+	  const formStyle = {
+		width: '100%',
+		maxWidth: '600px',
+		margin: 'auto',
+		boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
+		padding: '20px',
+		boxSizing: 'border-box',
+	  };
+
 	return (
-		<div className="main">
-			<div className="form">
+		<div className="main" style={mainStyle}>
+			<div className="form" style={formStyle}>
 				<div className="form-head">
 					<h2
 						onClick={() => handleFormChange(1)}

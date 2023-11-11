@@ -14,7 +14,7 @@
 
 	.form {
 		width: min(100%, 35rem);
-		background-color: rgba(255, 255, 255, 0.185);
+		background-color: rgba(255, 255, 255, 0.07);
 		backdrop-filter: blur(0.5em);
 		padding: 1em;
 		border-radius: 0.6em;
@@ -38,8 +38,8 @@
 					text-decoration-color: white;
 				}
 				&.active {
-					color: #f55050;
-					text-decoration-color: #f55050;
+					color: white;
+					text-decoration-color: green;
 					font-size: 1.8rem;
 				}
 			}
@@ -64,10 +64,10 @@
 			}
 
 			button {
-				background-color: #f55050;
+				background-color: #000000;
 				border: none;
 				cursor: pointer;
-				color: white;
+				color: rgb(51, 147, 51);
 				font-weight: 500;
 				padding-block: 0.6em;
 				border-radius: 0.5em;
