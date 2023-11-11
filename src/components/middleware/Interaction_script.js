@@ -29,9 +29,9 @@ import compiledSierra_erc20 from "./starkcash_ERC20.contract_class.json";
 // console.log("OZ_ACCOUNT_PRIVATE_KEY=", privateKey);
 
 const erc20_address =
-	"0x6d509e11c9f2675ad01e6ed7b07a564ac1412b5ad218697c0b8e0ce6264cb6a";
+	"0x6f35fd49cbe952041fa6d4dc6bbcd1a42484a40aae37e52a740959fa6fa639d";
 const core_address =
-	"0x056839737baa24d9a9648bde92e3f6b97f777327e12bd0afb4ed0b4478093509";
+	"0x04543643b54ea565e54d54edd7d9ff724150ada8e7bc5df8914ac2e3746f23dd";
 
 async function getCoreContractInstance(value) {
 	const myCoreContract = new Contract(
@@ -61,7 +61,7 @@ export async function balanceOf(spender, value) {
 	console.log(amount)
 	console.log(value)
 
-  let myerc20Contract = getERC20ContractInstance(value)
+  let myerc20Contract = await getERC20ContractInstance(value)
   console.log(myerc20Contract)
 	const par = CallData.compile({
 		account: spender,
@@ -80,28 +80,26 @@ export async function approve(spender, amount, value) {
 	console.log(spender)
 	console.log(amount)
 	console.log(value)
+	console.log(cairo.uint256(amount),"AMounttt")
 
-  let myerc20Contract = getERC20ContractInstance(value)
+  let myerc20Contract = await getERC20ContractInstance(value)
 	const par = CallData.compile({
 		spender: spender,
-		amount: cairo.uint256(amount),
+		amount: cairo.uint256(100n),
 	});
-	const res = await myerc20Contract.approve(par, {
-		parseRequest: true,
-		parseResponse: false,
-	});
+	const res = await myerc20Contract.invoke("approve",par);
 	console.log(res, " Approve Tx : hash");
 }
 
 export async function deposit(denomination, message, value) {
+	let myCoreContract = await getCoreContractInstance(value)
 	const par = CallData.compile({
-		amount: cairo.uint256(denomination),
+		amount: cairo.uint256(50n),
 		message: message,
+		
+		
 	});
-	let res = await myCoreContract.deposit(par, {
-		parseRequest: false,
-		parseResponse: false,
-	});
+	let res = await myCoreContract.invoke("deposit",par);
 }
 
 export async function hash_message(input, value) {
@@ -109,14 +107,17 @@ export async function hash_message(input, value) {
 		message: input,
 	});
 	let myCoreContract = await getCoreContractInstance(value)
+
 	let res = await myCoreContract.call("get_hash", par);
 	console.log(res.toString());
+	return res;
 }
 
 export async function withdraw(denomination, value) {
 	const par = CallData.compile({
 		amount: cairo.uint256(denomination),
 	});
+	let myCoreContract = await getCoreContractInstance(value)
 	let res = await myCoreContract.withdraw(par, {
 		parseRequest: false,
 		parseResponse: false,

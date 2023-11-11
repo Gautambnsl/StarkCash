@@ -73,7 +73,7 @@ export default function Form() {
 					{form === 1 ? (
 						<Deposit isConnect={isConnect} walletHandle={walletHandle} connection={provider}/>
 					) : (
-						<Withdraw isConnect={isConnect} walletHandle={walletHandle} />
+						<Withdraw isConnect={isConnect} walletHandle={walletHandle} connection={provider}/>
 					)}
 				</div>
 			</div>

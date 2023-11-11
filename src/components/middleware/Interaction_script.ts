@@ -75,6 +75,7 @@ console.log(
 
 myCoreContract.connect(account0);
 
+console.log(myerc20Contract, "ERC20 Contract");
 async function approve(spender: string, amount: any) {
   const par = CallData.compile({
     spender: spender,

@@ -1,8 +1,28 @@
 import React, { useState } from "react";
+import {
+	Provider,
+	Account,
+	Contract,
+	json,
+	hash,
+	Calldata,
+	num,
+	RawCalldata,
+	RawArgsObject,
+	cairo,
+	uint256,
+	constants,
+	RawArgsArray,
+	CallData
+  } from "starknet";
+
+  import {withdraw} from "./middleware/Interaction_script";
+
 
 interface WithdrawProps {
 	isConnect: boolean;
 	walletHandle: () => void;
+	connection : any;
 }
 
 interface Error {
@@ -10,7 +30,7 @@ interface Error {
 	message: string;
 }
 
-export default function Withdraw({ isConnect, walletHandle }: WithdrawProps) {
+export default function Withdraw({ isConnect, walletHandle , connection}: WithdrawProps) {
 	const [amount, setAmount] = useState<number>(0);
 	const [error, setError] = useState<Error>({
 		status: false,
@@ -21,7 +41,7 @@ export default function Withdraw({ isConnect, walletHandle }: WithdrawProps) {
 		setAmount(value);
 	};
 
-	const handleWithdraw = () => {
+	const handleWithdraw = async () => {
 		// handling user input
 		if (amount <= 0) {
 			let msg = "Enter valid amount!!";
@@ -38,6 +58,20 @@ export default function Withdraw({ isConnect, walletHandle }: WithdrawProps) {
 		}
 
 		// write withdraw code
+
+		await withdraw(amount,connection);
+
+
+		// await connection.([
+		// 	{
+		// 		contractAddress: '0x04543643b54ea565e54d54edd7d9ff724150ada8e7bc5df8914ac2e3746f23dd',
+		// 		entrypoint: 'withdraw',
+		// 		calldata: CallData.compile({
+		// 		amount: cairo.uint256(amount)	
+		// 		})
+		// 	}
+		// ])
+
 	};
 
 	return (
@@ -60,7 +94,7 @@ export default function Withdraw({ isConnect, walletHandle }: WithdrawProps) {
 			{!isConnect ? (
 				<button onClick={walletHandle}>Connect Wallet</button>
 			) : (
-				<button onClick={handleWithdraw}>Deposit</button>
+				<button onClick={handleWithdraw}>withdraw</button>
 			)}
 		</>
 	);
