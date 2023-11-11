@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@starknet-react/chains": "^0.0.0",
+    "@starknet-react/core": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sass": "^1.69.5"
+    "sass": "^1.69.5",
+    "starknet": "^5.21.1",
+    "starknetkit": "^1.0.12"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
