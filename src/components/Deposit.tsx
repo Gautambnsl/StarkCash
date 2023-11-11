@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+//@ts-ignore
+import {approve, balanceOf, hash_message} from "./middleware/Interaction_script";
+
 
 interface DepositProps {
 	isConnect: boolean;
+	connection : any;
 	walletHandle: () => void;
 }
 
@@ -16,7 +20,7 @@ interface Error {
 	amount: string;
 }
 
-export default function Deposit({ isConnect, walletHandle }: DepositProps) {
+export default function Deposit({ isConnect, walletHandle , connection}: DepositProps) {
 	const [userInput, setUserInput] = useState<UserInput>({
 		address: "",
 		amount: 0,
@@ -32,7 +36,7 @@ export default function Deposit({ isConnect, walletHandle }: DepositProps) {
 		setUserInput((prev) => ({ ...prev, [key]: value }));
 	};
 
-	const handleDeposit = () => {
+	const handleDeposit = async () => {
 		// handle deposit;
 		const { address, amount } = userInput;
 
@@ -66,7 +70,8 @@ export default function Deposit({ isConnect, walletHandle }: DepositProps) {
 			});
 		}
 
-		// code for depoist
+		await approve(userInput.address, userInput.amount,connection );
+		//  await hash_message(userInput.address, connection);
 	};
 
 	return (

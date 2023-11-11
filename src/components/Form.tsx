@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect, disconnect } from "starknetkit";
-import abi from "./middleware/abi.json";
+// @ts-ignore
 
 
 import Deposit from "./Deposit";
 import Withdraw from "./Withdraw";
-
-const contractAddress =  "0x056839737baa24d9a9648bde92e3f6b97f777327e12bd0afb4ed0b4478093509";
 
 export default function Form() {
 	const [form, setForm] = useState<number>(1);
@@ -21,22 +19,10 @@ export default function Form() {
 	console.log(address, "address");
 	console.log(connection, "connection");
 	
-	const handleFormChange = (val: number) => {
+	const handleFormChange = async (val: number) => {
 		setForm(val);
-		if(val == 1){
-
-		}else{
-
-		}
 	};
 
-
-	const deposit = async () => {
-
-		let core = new starknet.Contract(abi, address, provider)
-
-
-	}
 
 	const walletStatusChange = (value: boolean) => {
 		setIsConnect(value);
@@ -85,7 +71,7 @@ export default function Form() {
 				</div>
 				<div className="form-main">
 					{form === 1 ? (
-						<Deposit isConnect={isConnect} walletHandle={walletHandle} />
+						<Deposit isConnect={isConnect} walletHandle={walletHandle} connection={provider}/>
 					) : (
 						<Withdraw isConnect={isConnect} walletHandle={walletHandle} />
 					)}
