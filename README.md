@@ -102,3 +102,9 @@ StarkCash introduces a robust and private environment for executing cryptocurren
 Check out the deployed version [here](https://starkcash.vercel.app/).
 
 ### Voilaaaa! You are ready✨.
+
+### Core Project Contributors
+1. Akash Balasubramani
+2. Gautam Bansal
+3. Vennila Seshadri
+4. Sneha Kumari
