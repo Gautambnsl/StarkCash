@@ -95,6 +95,6 @@ StarkCash introduces a robust and private environment for executing cryptocurren
 
 ## Run the project locally
 ### Clone the repository
-### Do a quick - npm i
-### Do - npm run dev
+### Do a quick `npm i`
+### Do `npm run dev`
 ### Voilaaaa! You are ready.
