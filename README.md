@@ -1,5 +1,5 @@
 
-# High-Level Readme for StarkCash Decentralized Application
+StarkCash Dapp - This Project is built during Starknet Hacker House Istanbul 2023.
 
 ## Overview
 
