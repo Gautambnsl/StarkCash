@@ -1,5 +1,5 @@
 
-##💰StarkCash - This Project is built during Starknet Hacker House Istanbul 2023.
+## 💰StarkCash - This Project is built during Starknet Hacker House Istanbul 2023.
 
 ## Overview
 
