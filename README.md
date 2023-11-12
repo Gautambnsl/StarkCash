@@ -95,11 +95,12 @@ StarkCash introduces a robust and private environment for executing cryptocurren
 
 Real Life Use Cases include:
 
-1. Donations and Fundraising
-2. Confidential Contracts
-3. Private Transactions for Research and Development
-4. Supply Chain Privacy
-5. Salary and Subscription Payments
+1. Supply Chain Privacy
+2. Protection Against Discrimination
+3. Protection Against Censorship
+4. Private Transactions for Research and Development
+5. Confidential Contracts
+6. Donations and Fundraising
 
 ## Run the project locally
 1. Clone the repository
