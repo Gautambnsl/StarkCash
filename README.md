@@ -94,7 +94,7 @@ Handles the initialization process by incorporating events from the Initializabl
 StarkCash introduces a robust and private environment for executing cryptocurrency transactions on the StarkNet platform. Developers can leverage the provided functions to enable decentralized and confidential financial interactions, ensuring both security and privacy in a decentralized financial ecosystem.
 
 ## Run the project locally
-### Clone the repository
-### Do a quick `npm i`
-### Do `npm run dev`
+Clone the repository
+Do a quick `npm i`
+Do `npm run dev`
 ### Voilaaaa! You are ready.
