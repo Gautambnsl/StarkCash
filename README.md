@@ -1,5 +1,5 @@
 
-## StarkCash💰 - This Project is built during Starknet Hacker House Istanbul 2023.
+## StarkCash💰 - A mixer protocol "Elevating Privacy, Empowering Transactions in the Decentralized Realm. This Project is made with ❤️ during Starknet Hacker House Istanbul 2023.
 
 ## Overview
 
