@@ -97,4 +97,8 @@ StarkCash introduces a robust and private environment for executing cryptocurren
 1. Clone the repository
 2. Do a quick `npm i`
 3. Do `npm run dev`
+
+## Deployment
+Check out the deployed version [here](https://starkcash.vercel.app/).
+
 ### Voilaaaa! You are ready✨.
