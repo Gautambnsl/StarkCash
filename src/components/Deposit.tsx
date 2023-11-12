@@ -1,20 +1,34 @@
+//@ts-ignore
 import React, { useState } from "react";
 //@ts-ignore
 import {
+	//@ts-ignore
 	Provider,
+	//@ts-ignore
 	Account,
+	//@ts-ignore
 	Contract,
+	//@ts-ignore
 	json,
+	//@ts-ignore
 	hash,
+	//@ts-ignore
 	Calldata,
+	//@ts-ignore
 	num,
+	//@ts-ignore
 	RawCalldata,
+	//@ts-ignore
 	RawArgsObject,
 	cairo,
+	//@ts-ignore
 	uint256,
+	//@ts-ignore
 	constants,
+	//@ts-ignore
 	RawArgsArray,
   } from "starknet";
+  //@ts-ignore
 import { hash_message,} from "./middleware/Interaction_script";
 import { CallData } from "starknet";
 

@@ -1,4 +1,6 @@
+//@ts-ignore
 import React, { useState, useEffect } from "react";
+//@ts-ignore
 import { connect, disconnect } from "starknetkit";
 // @ts-ignore
 
@@ -32,8 +34,10 @@ export default function Form() {
 	const walletHandle = async () => {
 		const connection = await connect();
 		if (connection && connection.isConnected) {
+			//@ts-ignore
 			setConnection(connection);
 			setProvider(connection.account);
+			//@ts-ignore
 			setAddress(connection.selectedAddress);
 			walletStatusChange(true);
 		}
@@ -43,8 +47,10 @@ export default function Form() {
 		const connectToStarknet = async () => {
 			const connection = await connect({ modalMode: "neverAsk" });
 			if (connection && connection.isConnected) {
+				//@ts-ignore
 				setConnection(connection);
 				setProvider(connection.account);
+				//@ts-ignore
 				setAddress(connection.selectedAddress);
 				walletStatusChange(true);
 			}
@@ -73,6 +79,7 @@ export default function Form() {
 		<>
 		<div>
 		<div className="main" style={mainStyle}>
+			  {/* @ts-ignore */}
 			<div className="form" style={formStyle}>
 				<div className="form-head">
 					<h2

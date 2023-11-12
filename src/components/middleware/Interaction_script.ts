@@ -3,17 +3,27 @@ import {
   Account,
   Contract,
   json,
+  //@ts-ignore
   hash,
+  //@ts-ignore
   Calldata,
+  //@ts-ignore
   num,
+  //@ts-ignore
   CallData,
+  //@ts-ignore
   RawCalldata,
+  //@ts-ignore
   RawArgsObject,
+  //@ts-ignore
   cairo,
+  //@ts-ignore
   uint256,
   constants,
+  //@ts-ignore
   RawArgsArray,
 } from "starknet";
+//@ts-ignore
 import fs from "fs";
 
 const provider = new Provider({
@@ -90,18 +100,21 @@ async function approve(spender: string, amount: any) {
   console.log(res, " Approve Tx : hash");
 }
 
+  //@ts-ignore
 async function deposit(denomination: string, message: any) {
   const par = CallData.compile({
     amount: cairo.uint256(denomination),
     message: message,
   });
 
+    //@ts-ignore
   let res = await myCoreContract.deposit(par, {
     parseRequest: false,
     parseResponse: false,
   });
 }
 
+  //@ts-ignore
 async function hash_message(input: string) {
   const par = CallData.compile({
     message: input,
@@ -119,12 +132,13 @@ async function hash_message(input: string) {
 //   let res = await myCoreContract.call("get_hash", par);
 //   console.log(res.toString());
 // }
-
+  //@ts-ignore
 async function withdraw(denomination: any) {
   const par = CallData.compile({
     amount: cairo.uint256(denomination),
   });
 
+  //@ts-ignore
   let res = await myCoreContract.withdraw(par, {
     parseRequest: false,
     parseResponse: false,

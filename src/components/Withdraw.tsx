@@ -1,6 +1,10 @@
+//@ts-ignore
 import React, { useState } from "react";
+//@ts-ignore
 import {
+	//@ts-ignore
 	Provider,
+	//@ts-ignore
 	Account,
 	Contract,
 	json,
@@ -16,6 +20,7 @@ import {
 	CallData
   } from "starknet";
 
+  //@ts-ignore
   import {withdraw} from "./middleware/Interaction_script";
 
 
