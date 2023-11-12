@@ -118,10 +118,13 @@ export async function withdraw(denomination, value) {
 		amount: cairo.uint256(denomination),
 	});
 	let myCoreContract = await getCoreContractInstance(value)
-	let res = await myCoreContract.withdraw(par, {
+	let success = await myCoreContract.withdraw(par, {
 		parseRequest: false,
 		parseResponse: false,
 	});
+
+	console.log(success,"success")
+		alert(`Transaction Success, Tx Hash : ${success.transaction_hash} `)
 }
 
 

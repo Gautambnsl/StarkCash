@@ -67,9 +67,11 @@ export default function Form() {
 		boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
 		padding: '20px',
 		boxSizing: 'border-box',
-	  };
+	};
 
 	return (
+		<>
+		<div>
 		<div className="main" style={mainStyle}>
 			<div className="form" style={formStyle}>
 				<div className="form-head">
@@ -92,9 +94,12 @@ export default function Form() {
 						<Deposit isConnect={isConnect} walletHandle={walletHandle} connection={provider}/>
 					) : (
 						<Withdraw isConnect={isConnect} walletHandle={walletHandle} connection={provider}/>
-					)}
+						)}
 				</div>
 			</div>
 		</div>
+
+		</div>
+						</>
 	);
 }

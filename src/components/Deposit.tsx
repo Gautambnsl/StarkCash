@@ -95,7 +95,7 @@ export default function Deposit({ isConnect, walletHandle , connection}: Deposit
 
 
 		
-		await connection.execute([
+		let success = await connection.execute([
 			{
 				contractAddress: erc20_address,
 				entrypoint: 'approve',
@@ -117,13 +117,14 @@ export default function Deposit({ isConnect, walletHandle , connection}: Deposit
 
 		// await approve(userInput.address, userInput.amount,connection );
 		// await deposit(userInput.amount,userInput.address,connection );
-		
+		console.log(success,"success")
+		alert(`Transaction Success, Tx Hash : ${success.transaction_hash} `)
 	};
 
 	return (
 		<>
 			<div className="input">
-				<label htmlFor="address">Address:</label>
+				<label htmlFor="address">Withdrawer's Address:</label>
 
 				<input
 					type="text"
@@ -136,6 +137,19 @@ export default function Deposit({ isConnect, walletHandle , connection}: Deposit
 
 				{error.status && error.address && <p>{error.address}</p>}
 			</div>
+
+			<div className="input">
+    <label htmlFor="token">Token: </label>
+    <select
+        value="Enter the Token"
+        id="token"
+    >
+        <option value="eth">wETH</option>
+        {/* Add more options as needed */}
+    </select>
+</div>
+
+			
 
 			<div className="input">
 				<label htmlFor="amount">Amount:</label>
