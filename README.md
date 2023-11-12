@@ -1,5 +1,5 @@
 
-## StarkCash💰 - A mixer protocol "Elevating Privacy, Empowering Transactions in the Decentralized Realm. This Project is made with ❤️ during Starknet Hacker House Istanbul 2023.
+# StarkCash💰 - A mixer protocol "Elevating Privacy, Empowering Transactions in the Decentralized Realm. This Project is made with ❤️ during Starknet Hacker House Istanbul 2023.
 
 ## Overview
 
@@ -39,7 +39,6 @@ StarkCash emits events capturing pivotal activities:
 - Error: Records error messages in the event of unauthorized actions.
 - Initializable: Handles initialization events from the Initializable trait.
 
-# Low-Level Readme for StarkCash Smart Contract
 
 ## Smart Contract Components
 
