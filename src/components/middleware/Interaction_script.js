@@ -29,9 +29,9 @@ import compiledSierra_erc20 from "./starkcash_ERC20.contract_class.json";
 // console.log("OZ_ACCOUNT_PRIVATE_KEY=", privateKey);
 
 const erc20_address =
-	"0x6f35fd49cbe952041fa6d4dc6bbcd1a42484a40aae37e52a740959fa6fa639d";
+	"0x034ae182d6ab7d05d41139a1a09a58f1330ea3422019db88be11c94036ca9af5";
 const core_address =
-	"0x04543643b54ea565e54d54edd7d9ff724150ada8e7bc5df8914ac2e3746f23dd";
+	"0x03552872f34714257764f9cede28ec22c10672bd5f1c2f4443c88f3326ca274d";
 
 async function getCoreContractInstance(value) {
 	const myCoreContract = new Contract(

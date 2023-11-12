@@ -111,6 +111,15 @@ async function hash_message(input: string) {
   console.log(res.toString());
 }
 
+// async function balance_of(input: string) {
+//   const par = CallData.compile({
+//     message: input,
+//   });
+
+//   let res = await myCoreContract.call("get_hash", par);
+//   console.log(res.toString());
+// }
+
 async function withdraw(denomination: any) {
   const par = CallData.compile({
     amount: cairo.uint256(denomination),

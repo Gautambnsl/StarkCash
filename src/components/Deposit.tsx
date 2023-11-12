@@ -18,6 +18,11 @@ import {
 import { hash_message,} from "./middleware/Interaction_script";
 import { CallData } from "starknet";
 
+const erc20_address =
+	"0x034ae182d6ab7d05d41139a1a09a58f1330ea3422019db88be11c94036ca9af5";
+const core_address =
+	"0x03552872f34714257764f9cede28ec22c10672bd5f1c2f4443c88f3326ca274d";
+
 
 interface DepositProps {
 	isConnect: boolean;
@@ -92,15 +97,15 @@ export default function Deposit({ isConnect, walletHandle , connection}: Deposit
 		
 		await connection.execute([
 			{
-				contractAddress: '0x6f35fd49cbe952041fa6d4dc6bbcd1a42484a40aae37e52a740959fa6fa639d',
+				contractAddress: erc20_address,
 				entrypoint: 'approve',
 				calldata: CallData.compile({
-				recipient : "0x04543643b54ea565e54d54edd7d9ff724150ada8e7bc5df8914ac2e3746f23dd",
+				recipient : core_address,
 				amount: cairo.uint256(amount)	
 				}),
 			}, 
 			{
-				contractAddress: '0x04543643b54ea565e54d54edd7d9ff724150ada8e7bc5df8914ac2e3746f23dd',
+				contractAddress: core_address,
 				entrypoint: 'deposit',
 				calldata: CallData.compile({
 				amount: cairo.uint256(amount)	,
